@@ -18,7 +18,7 @@ class _Transport extends State<Transport> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 30, left: 20, right: 20),
+      padding: EdgeInsets.only(top: 52, left: 20, right: 20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -92,6 +92,7 @@ class _Transport extends State<Transport> {
                 // Действие при нажатии на кнопку
               },
               child: Container(
+                padding: EdgeInsets.only(top: 10),
                 alignment: Alignment.topCenter,
                 // Стилизуйте контейнер с иконкой и текстом по вашему усмотрению
                 child: Row(
@@ -100,6 +101,7 @@ class _Transport extends State<Transport> {
                       Icons.add_circle_outline,
                       color: Colors.blue,
                     ),
+                    SizedBox(width: 5),
                     Text(
                       'Транспорт',
                       style: TextStyle(color: Colors.blue),

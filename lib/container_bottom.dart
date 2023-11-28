@@ -31,17 +31,17 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
             child: Row(
               children: [
                 Expanded(
-                  flex: 2,
+                  flex: 1,
                   child: Transport(transports: transports),
                 ),
                 Expanded(
-                  flex: 7,
+                  flex: 5,
                   child: Center(
                     child: Contractor(data: data),
                   ),
                 ),
                 Expanded(
-                  flex: 2,
+                  flex: 1,
                   child: Center(
                     child: Text(widget.data.manufacturer),
                   ),

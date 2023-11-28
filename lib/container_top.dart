@@ -63,6 +63,7 @@ class _CustomTopContainer extends State<CustomTopContainer> {
                   Text('Статус:'),
                   SizedBox(width: 8),
                   Container(
+                    height: 30,
                     padding: EdgeInsets.only(right: 5, left: 5),
                     decoration: BoxDecoration(
                       color: Colors.blue,

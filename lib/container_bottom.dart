@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'Data.dart';
 import 'contractor.dart';
+import 'delivery_calculation.dart';
 import 'transport.dart';
 
 class CustomBottomContainer extends StatefulWidget {
@@ -43,7 +44,7 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
                 Expanded(
                   flex: 1,
                   child: Center(
-                    child: Text(widget.data.manufacturer),
+                    child: Delivery_calculation(),
                   ),
                 ),
               ],

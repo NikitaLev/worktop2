@@ -4,9 +4,13 @@ import 'package:flutter/material.dart';
 
 class Transport extends StatefulWidget {
   List<Map<String, bool>> transportss = [];
+  Map<String, bool> transport = {};
 
-  Transport({required List<Map<String, bool>> transports}) {
+  Transport(
+      {required List<Map<String, bool>> transports,
+      required Map<String, bool> transport}) {
     transportss = transports;
+    this.transport = transport;
     print(transportss.length);
   }
 
@@ -88,7 +92,12 @@ class _Transport extends State<Transport> {
           ),
           Container(
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                setState(() {
+                  widget.transportss.add(widget.transport);
+                  print(widget.transportss);
+                });
+              },
               child: Container(
                 padding: EdgeInsets.only(top: 10),
                 alignment: Alignment.topCenter,

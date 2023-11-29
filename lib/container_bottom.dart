@@ -35,7 +35,10 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Transport(transports: transports),
+                    child: Transport(
+                      transports: transports,
+                      transport: transport,
+                    ),
                   ),
                   Expanded(
                     flex: 5,

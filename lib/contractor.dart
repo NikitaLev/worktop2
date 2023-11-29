@@ -66,7 +66,7 @@ class _Contractor extends State<Contractor> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      height: 800,
       padding: EdgeInsets.all(20),
       child: SingleChildScrollView(
         child: Column(

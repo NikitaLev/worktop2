@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 8,
+              flex: 9,
               child: Container(
                 margin: EdgeInsets.only(left: 16, right: 16),
                 decoration: BoxDecoration(

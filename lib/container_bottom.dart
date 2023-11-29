@@ -27,32 +27,33 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Expanded(
-            flex: 6,
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Transport(transports: transports),
-                ),
-                Expanded(
-                  flex: 5,
-                  child: Center(
-                    child: Contractor(data: data),
+          Container(
+            child: Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Transport(transports: transports),
                   ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Center(
-                    child: Delivery_calculation(),
+                  Expanded(
+                    flex: 5,
+                    child: Center(
+                      child: Contractor(data: data),
+                    ),
                   ),
-                ),
-              ],
+                  Expanded(
+                    flex: 1,
+                    child: Center(
+                      child: Delivery_calculation(),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          Expanded(
-            flex: 4,
+          Container(
             child: Panel_bottom(),
           ),
         ],

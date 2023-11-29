@@ -157,6 +157,7 @@ class _Inner_container extends State<Inner_container> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(top: 20),
       height: 250,
       child: Container(
         decoration: BoxDecoration(

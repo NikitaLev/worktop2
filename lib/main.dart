@@ -57,8 +57,7 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              flex: 1,
+            Container(
               child: Container(
                 margin: EdgeInsets.only(top: 16, left: 16, right: 16),
                 child: CustomTopContainer(
@@ -69,18 +68,20 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              flex: 9,
-              child: Container(
-                margin: EdgeInsets.only(left: 16, right: 16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    topRight: Radius.circular(16),
+            Container(
+              child: Expanded(
+                flex: 9,
+                child: Container(
+                  margin: EdgeInsets.only(left: 16, right: 16),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16),
+                    ),
                   ),
+                  child: CustomBottomContainer(data: data),
                 ),
-                child: CustomBottomContainer(data: data),
               ),
             ),
           ],

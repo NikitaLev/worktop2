@@ -13,7 +13,7 @@ class _Delivery_calculation extends State<Delivery_calculation> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 52, left: 20, right: 20),
+      padding: EdgeInsets.only(top: 52, left: 5, right: 20),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -65,6 +65,8 @@ class _Delivery_calculation extends State<Delivery_calculation> {
           Row(
             children: [
               Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     alignment: Alignment.bottomLeft,
@@ -78,6 +80,7 @@ class _Delivery_calculation extends State<Delivery_calculation> {
                     ),
                   ),
                   Container(
+                    padding: EdgeInsets.only(bottom: 5),
                     alignment: Alignment.topLeft,
                     child: Align(
                       alignment: Alignment.topLeft,

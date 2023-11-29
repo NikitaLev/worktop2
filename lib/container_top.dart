@@ -37,7 +37,6 @@ class _CustomTopContainer extends State<CustomTopContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(bottom: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

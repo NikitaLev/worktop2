@@ -88,13 +88,10 @@ class _Transport extends State<Transport> {
           ),
           Container(
             child: InkWell(
-              onTap: () {
-                // Действие при нажатии на кнопку
-              },
+              onTap: () {},
               child: Container(
                 padding: EdgeInsets.only(top: 10),
                 alignment: Alignment.topCenter,
-                // Стилизуйте контейнер с иконкой и текстом по вашему усмотрению
                 child: Row(
                   children: [
                     Icon(

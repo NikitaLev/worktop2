@@ -224,7 +224,6 @@ class _Contractor extends State<Contractor> {
                           alignment: Alignment.centerLeft,
                           margin: EdgeInsets.only(top: 4, right: 20),
                           child: TextField(
-                            enabled: false,
                             decoration: InputDecoration(
                               filled: true,
                               fillColor: Color.fromARGB(255, 255, 255, 255),

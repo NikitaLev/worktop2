@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'Data.dart';
 import 'contractor.dart';
 import 'delivery_calculation.dart';
+import 'panel_bottom.dart';
 import 'transport.dart';
 
 class CustomBottomContainer extends StatefulWidget {
@@ -28,7 +29,7 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
       child: Column(
         children: [
           Expanded(
-            flex: 8,
+            flex: 6,
             child: Row(
               children: [
                 Expanded(
@@ -51,10 +52,8 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
             ),
           ),
           Expanded(
-            flex: 1,
-            child: Container(
-                // Нижняя часть контейнера
-                ),
+            flex: 4,
+            child: Panel_bottom(),
           ),
         ],
       ),

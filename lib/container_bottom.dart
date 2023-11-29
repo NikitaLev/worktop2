@@ -32,6 +32,8 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
           Container(
             child: Expanded(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     flex: 1,
@@ -42,7 +44,8 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
                   ),
                   Expanded(
                     flex: 5,
-                    child: Center(
+                    child: Container(
+                      alignment: Alignment.topCenter,
                       child: Contractor(data: data),
                     ),
                   ),

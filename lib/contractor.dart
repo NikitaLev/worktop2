@@ -41,6 +41,13 @@ class _Contractor extends State<Contractor> {
   List<Map<String, bool>> transports = [
     transport,
   ];
+  List<Widget> containers_manufacturer = [
+    Manufacturer_panel(),
+  ];
+  List<Widget> containers_delivery_location = [
+    Delivery_location_panel(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -56,6 +63,8 @@ class _Contractor extends State<Contractor> {
                     color: Color.fromARGB(255, 142, 204, 255), width: 2),
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     flex: 1,
@@ -67,63 +76,83 @@ class _Contractor extends State<Contractor> {
                   ),
                   Expanded(
                     flex: 2,
-                    child: Column(children: [
-                      Manufacturer_panel(),
-                      Container(
-                        padding: EdgeInsets.only(left: 20),
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            padding: EdgeInsets.only(top: 2),
-                            alignment: Alignment.topCenter,
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.add_circle_outline,
-                                  color: Colors.blue,
+                    child: Container(
+                      child: SingleChildScrollView(
+                        child: Column(children: [
+                          ...containers_manufacturer,
+                          Container(
+                            padding: EdgeInsets.only(left: 20),
+                            child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  containers_manufacturer.add(
+                                    Manufacturer_panel(),
+                                  );
+                                });
+                              },
+                              child: Container(
+                                padding: EdgeInsets.only(top: 2),
+                                alignment: Alignment.topCenter,
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.add_circle_outline,
+                                      color: Colors.blue,
+                                    ),
+                                    SizedBox(width: 5),
+                                    Text(
+                                      'Производитель',
+                                      style: TextStyle(
+                                          fontSize: 13, color: Colors.black),
+                                    ),
+                                  ],
                                 ),
-                                SizedBox(width: 5),
-                                Text(
-                                  'Производитель',
-                                  style: TextStyle(
-                                      fontSize: 13, color: Colors.black),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
-                        ),
+                        ]),
                       ),
-                    ]),
+                    ),
                   ),
                   Expanded(
                     flex: 1,
-                    child: Column(children: [
-                      Delivery_location_panel(),
-                      Container(
-                        padding: EdgeInsets.only(left: 20),
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            padding: EdgeInsets.only(top: 2),
-                            alignment: Alignment.topCenter,
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.add_circle_outline,
-                                  color: Colors.blue,
+                    child: Container(
+                      child: SingleChildScrollView(
+                        child: Column(children: [
+                          ...containers_delivery_location,
+                          Container(
+                            padding: EdgeInsets.only(left: 20),
+                            child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  containers_delivery_location.add(
+                                    Delivery_location_panel(),
+                                  );
+                                });
+                              },
+                              child: Container(
+                                padding: EdgeInsets.only(top: 2),
+                                alignment: Alignment.topCenter,
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.add_circle_outline,
+                                      color: Colors.blue,
+                                    ),
+                                    SizedBox(width: 5),
+                                    Text(
+                                      'Место доставки',
+                                      style: TextStyle(
+                                          fontSize: 13, color: Colors.black),
+                                    ),
+                                  ],
                                 ),
-                                SizedBox(width: 5),
-                                Text(
-                                  'Место доставки',
-                                  style: TextStyle(
-                                      fontSize: 13, color: Colors.black),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
-                        ),
+                        ]),
                       ),
-                    ]),
+                    ),
                   ),
                 ],
               ),

@@ -68,49 +68,57 @@ class _Contractor extends State<Contractor> {
     return Container(
       height: 800,
       padding: EdgeInsets.all(20),
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            ...containers_inner_container,
-            Container(
-              child: InkWell(
-                onTap: () {
-                  setState(() {
-                    containers_inner_container.add(
-                      Inner_container(
-                          selectedItem: selectedItem,
-                          count: count,
-                          dropdownItems: _dropdownItems,
-                          dropdownItems2: _dropdownItems2,
-                          transport: transport,
-                          transports: transports,
-                          containersManufacturer: containers_manufacturer,
-                          containersDeliveryLocation:
-                              containers_delivery_location),
-                    );
-                  });
-                },
-                child: Container(
-                  padding: EdgeInsets.only(top: 10),
-                  alignment: Alignment.topCenter,
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.add_circle_outline,
-                        color: Colors.blue,
-                      ),
-                      SizedBox(width: 5),
-                      Text(
-                        'Контрагент',
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    ],
-                  ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            child: Expanded(
+              child: SingleChildScrollView(
+                child: Column(children: [
+                  ...containers_inner_container,
+                ]),
+              ),
+            ),
+          ),
+          Container(
+            child: InkWell(
+              onTap: () {
+                setState(() {
+                  containers_inner_container.add(
+                    Inner_container(
+                        selectedItem: selectedItem,
+                        count: count,
+                        dropdownItems: _dropdownItems,
+                        dropdownItems2: _dropdownItems2,
+                        transport: transport,
+                        transports: transports,
+                        containersManufacturer: containers_manufacturer,
+                        containersDeliveryLocation:
+                            containers_delivery_location),
+                  );
+                });
+              },
+              child: Container(
+                padding: EdgeInsets.only(top: 10),
+                alignment: Alignment.topCenter,
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.add_circle_outline,
+                      color: Colors.blue,
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      'Контрагент',
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                  ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

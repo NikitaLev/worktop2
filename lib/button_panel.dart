@@ -41,20 +41,23 @@ class _Button_panel extends State<Button_panel>
                       padding: EdgeInsets.all(5),
                     )),
                 Expanded(
-                    flex: 1,
-                    child: Container(
-                        padding: EdgeInsets.all(5),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.orange,
-                            onPrimary: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                          child: Text('Согласовано'),
-                        )))
+                  flex: 1,
+                  child: Container(
+                    padding: EdgeInsets.all(5),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.orange,
+                        onPrimary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      child:
+                          Text('Согласовано', style: TextStyle(fontSize: 10)),
+                    ),
+                  ),
+                )
               ],
             )),
         Expanded(
@@ -84,7 +87,7 @@ class _Button_panel extends State<Button_panel>
                           'Отмена',
                           style: TextStyle(
                             color: Colors.blue,
-                            fontSize: 16,
+                            fontSize: 10,
                           ),
                         ),
                       ),
@@ -102,7 +105,8 @@ class _Button_panel extends State<Button_panel>
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          child: Text('Сохранить'),
+                          child:
+                              Text('Сохранить', style: TextStyle(fontSize: 10)),
                         )))
               ],
             ))

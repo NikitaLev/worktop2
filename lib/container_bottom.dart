@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'Data.dart';
+import 'activity_panel.dart';
+import 'button_panel.dart';
 import 'contractor.dart';
 import 'delivery_calculation.dart';
 import 'panel_bottom.dart';
@@ -26,44 +28,65 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(
-            child: Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Transport(
-                      transports: transports,
-                      transport: transport,
-                    ),
+        child: Row(
+      children: [
+        Expanded(
+          flex: 10,
+          child: Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 500,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Container(
+                          child: Transport(
+                            transports: transports,
+                            transport: transport,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 11,
+                        child: Container(
+                          alignment: Alignment.topCenter,
+                          child: Contractor(data: data),
+                        ),
+                      ),
+                    ],
                   ),
-                  Expanded(
-                    flex: 5,
-                    child: Container(
-                      alignment: Alignment.topCenter,
-                      child: Contractor(data: data),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Center(
-                      child: Delivery_calculation(),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+                Container(
+                  child: Activity_panel(),
+                ),
+              ],
             ),
           ),
-          Container(
-            child: Panel_bottom(),
+        ),
+        Expanded(
+          flex: 2,
+          child: Container(
+            padding: EdgeInsets.only(bottom: 50, right: 0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  child: Delivery_calculation(),
+                ),
+                Container(
+                  height: 100,
+                  child: Button_panel(),
+                ),
+              ],
+            ),
           ),
-        ],
-      ),
-    );
+        ),
+      ],
+    ));
   }
 }

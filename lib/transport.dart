@@ -117,11 +117,6 @@ class _Transport extends State<Transport> {
               ),
             ),
           ),
-          Container(
-            child: Expanded(
-              child: Container(),
-            ),
-          )
         ],
       ),
     );

@@ -4,8 +4,15 @@ import 'package:flutter/material.dart';
 import 'Data.dart';
 import 'container_bottom.dart';
 import 'container_top.dart';
+import 'dart:io';
+import 'package:window_size/window_size.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isWindows) {
+    setWindowMinSize(const Size(1400, 1000));
+    setWindowMaxSize(Size.infinite);
+  }
   runApp(MyApp());
 }
 

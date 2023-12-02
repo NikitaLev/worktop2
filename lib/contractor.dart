@@ -166,7 +166,7 @@ class _Inner_container extends State<Inner_container> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 20),
-      height: 250,
+      height: 400,
       child: Container(
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 230, 247, 255),

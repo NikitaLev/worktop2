@@ -51,7 +51,6 @@ class _Delivery_location_panel extends State<Delivery_location_panel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
       margin: EdgeInsets.only(right: 5, left: 5, top: 20, bottom: 5),
       color: Color.fromARGB(255, 178, 220, 255),
       padding: EdgeInsets.only(top: 10, bottom: 10),

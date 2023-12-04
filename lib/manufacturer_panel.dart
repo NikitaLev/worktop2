@@ -34,7 +34,6 @@ class _Manufacturer_panel extends State<Manufacturer_panel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
       margin: EdgeInsets.only(right: 15, top: 20, bottom: 5),
       color: Color.fromARGB(255, 178, 220, 255),
       padding: EdgeInsets.only(right: 5, top: 10, bottom: 10),

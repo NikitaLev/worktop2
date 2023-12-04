@@ -66,59 +66,58 @@ class _Contractor extends State<Contractor> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 800,
       padding: EdgeInsets.all(20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            child: Expanded(
-              child: SingleChildScrollView(
-                child: Column(children: [
-                  ...containers_inner_container,
-                ]),
-              ),
-            ),
-          ),
-          Container(
-            child: InkWell(
-              onTap: () {
-                setState(() {
-                  containers_inner_container.add(
-                    Inner_container(
-                        selectedItem: selectedItem,
-                        count: count,
-                        dropdownItems: _dropdownItems,
-                        dropdownItems2: _dropdownItems2,
-                        transport: transport,
-                        transports: transports,
-                        containersManufacturer: containers_manufacturer,
-                        containersDeliveryLocation:
-                            containers_delivery_location),
-                  );
-                });
-              },
-              child: Container(
-                padding: EdgeInsets.only(top: 10),
-                alignment: Alignment.topCenter,
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.add_circle_outline,
-                      color: Colors.blue,
-                    ),
-                    SizedBox(width: 5),
-                    Text(
-                      'Контрагент',
-                      style: TextStyle(color: Colors.blue),
-                    ),
-                  ],
+      child: SingleChildScrollView(
+        child: IntrinsicWidth(
+          child: Column(
+            children: [
+              Container(
+                child: IntrinsicWidth(
+                  child: Column(children: [
+                    ...containers_inner_container,
+                  ]),
                 ),
               ),
-            ),
+              Container(
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      containers_inner_container.add(
+                        Inner_container(
+                            selectedItem: selectedItem,
+                            count: count,
+                            dropdownItems: _dropdownItems,
+                            dropdownItems2: _dropdownItems2,
+                            transport: transport,
+                            transports: transports,
+                            containersManufacturer: containers_manufacturer,
+                            containersDeliveryLocation:
+                                containers_delivery_location),
+                      );
+                    });
+                  },
+                  child: Container(
+                    padding: EdgeInsets.only(top: 10),
+                    alignment: Alignment.topCenter,
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.add_circle_outline,
+                          color: Colors.blue,
+                        ),
+                        SizedBox(width: 5),
+                        Text(
+                          'Контрагент',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
@@ -165,108 +164,109 @@ class _Inner_container extends State<Inner_container> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 20),
-      height: 400,
-      child: Container(
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 230, 247, 255),
-          borderRadius: BorderRadius.circular(4),
-          border:
-              Border.all(color: Color.fromARGB(255, 142, 204, 255), width: 2),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              flex: 1,
-              child: Counterparty_panel(),
-            ),
-            Expanded(
-              flex: 1,
-              child: Payment_panel(),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                child: SingleChildScrollView(
-                  child: Column(children: [
-                    ...widget.containers_manufacturer,
-                    Container(
-                      padding: EdgeInsets.only(left: 20),
-                      child: InkWell(
-                        onTap: () {
-                          setState(() {
-                            widget.containers_manufacturer.add(
-                              Manufacturer_panel(),
-                            );
-                          });
-                        },
-                        child: Container(
-                          padding: EdgeInsets.only(top: 2),
-                          alignment: Alignment.topCenter,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.add_circle_outline,
-                                color: Colors.blue,
-                              ),
-                              SizedBox(width: 5),
-                              Text(
-                                'Производитель',
-                                style: TextStyle(
-                                    fontSize: 13, color: Colors.black),
-                              ),
-                            ],
+      padding: EdgeInsets.only(top: 10),
+      child: IntrinsicWidth(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 230, 247, 255),
+            borderRadius: BorderRadius.circular(4),
+            border:
+                Border.all(color: Color.fromARGB(255, 142, 204, 255), width: 2),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 1,
+                child: Counterparty_panel(),
+              ),
+              Expanded(
+                flex: 1,
+                child: Payment_panel(),
+              ),
+              Expanded(
+                flex: 2,
+                child: Container(
+                  child: SingleChildScrollView(
+                    child: Column(children: [
+                      ...widget.containers_manufacturer,
+                      Container(
+                        padding: EdgeInsets.only(left: 20),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              widget.containers_manufacturer.add(
+                                Manufacturer_panel(),
+                              );
+                            });
+                          },
+                          child: Container(
+                            padding: EdgeInsets.only(top: 2),
+                            alignment: Alignment.topCenter,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.add_circle_outline,
+                                  color: Colors.blue,
+                                ),
+                                SizedBox(width: 5),
+                                Text(
+                                  'Производитель',
+                                  style: TextStyle(
+                                      fontSize: 13, color: Colors.black),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ]),
+                    ]),
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                child: SingleChildScrollView(
-                  child: Column(children: [
-                    ...widget.containers_delivery_location,
-                    Container(
-                      padding: EdgeInsets.only(left: 20),
-                      child: InkWell(
-                        onTap: () {
-                          setState(() {
-                            widget.containers_delivery_location.add(
-                              Delivery_location_panel(),
-                            );
-                          });
-                        },
-                        child: Container(
-                          padding: EdgeInsets.only(top: 2),
-                          alignment: Alignment.topCenter,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.add_circle_outline,
-                                color: Colors.blue,
-                              ),
-                              SizedBox(width: 5),
-                              Text(
-                                'Место доставки',
-                                style: TextStyle(
-                                    fontSize: 13, color: Colors.black),
-                              ),
-                            ],
+              Expanded(
+                flex: 1,
+                child: Container(
+                  child: SingleChildScrollView(
+                    child: Column(children: [
+                      ...widget.containers_delivery_location,
+                      Container(
+                        padding: EdgeInsets.only(left: 20),
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              widget.containers_delivery_location.add(
+                                Delivery_location_panel(),
+                              );
+                            });
+                          },
+                          child: Container(
+                            padding: EdgeInsets.only(top: 2),
+                            alignment: Alignment.topCenter,
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.add_circle_outline,
+                                  color: Colors.blue,
+                                ),
+                                SizedBox(width: 5),
+                                Text(
+                                  'Место доставки',
+                                  style: TextStyle(
+                                      fontSize: 13, color: Colors.black),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ]),
+                    ]),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

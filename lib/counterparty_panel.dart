@@ -41,7 +41,7 @@ class _Counterparty_panel extends State<Counterparty_panel> {
     return Container(
       margin: EdgeInsets.only(right: 10),
       padding: EdgeInsets.only(top: 30),
-      child: SingleChildScrollView(
+      child: IntrinsicWidth(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,

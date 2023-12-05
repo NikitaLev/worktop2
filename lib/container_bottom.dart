@@ -27,66 +27,67 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
   List<Map<String, bool>> transports = [transport, transport];
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Row(
-      children: [
-        Expanded(
-          flex: 10,
-          child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: 500,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: Container(
-                          child: Transport(
-                            transports: transports,
-                            transport: transport,
-                          ),
+    return SingleChildScrollView(
+      child: Stack(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: EdgeInsets.only(right: 200),
+                width: 1800,
+                height: 500,
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: IntrinsicWidth(
+                        child: Transport(
+                          transports: transports,
+                          transport: transport,
                         ),
                       ),
-                      Expanded(
-                        flex: 11,
-                        child: Container(
-                          alignment: Alignment.topCenter,
-                          child: Contractor(data: data),
-                        ),
+                    ),
+                    Expanded(
+                      flex: 11,
+                      child: IntrinsicWidth(
+                        child: Contractor(data: data),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                Container(
-                  child: Activity_panel(),
+              ),
+              Container(
+                padding: EdgeInsets.only(bottom: 50, right: 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      child: Activity_panel(),
+                    ),
+                    Container(
+                      height: 100,
+                      child: Button_panel(),
+                    ),
+                  ],
                 ),
-              ],
+              ),
+            ],
+          ),
+          Positioned(
+            top: 20, // Позиционирование по вертикали
+            right: 20, // Позиционирование по горизонтали
+            child: Container(
+              width: 200,
+              height: 400,
+              child: Delivery_calculation(),
+              // Добавьте сюда содержимое малого контейнера
             ),
           ),
-        ),
-        Expanded(
-          flex: 2,
-          child: Container(
-            padding: EdgeInsets.only(bottom: 50, right: 0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  child: Delivery_calculation(),
-                ),
-                Container(
-                  height: 100,
-                  child: Button_panel(),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    ));
+        ],
+      ),
+    );
   }
 }

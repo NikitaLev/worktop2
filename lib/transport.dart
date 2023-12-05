@@ -21,7 +21,7 @@ class Transport extends StatefulWidget {
 class _Transport extends State<Transport> {
   @override
   Widget build(BuildContext context) {
-    return IntrinsicWidth(
+    return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

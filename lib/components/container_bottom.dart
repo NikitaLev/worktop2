@@ -39,6 +39,7 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
                 //  width: 1800,
                 // height: null,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       flex: 2,

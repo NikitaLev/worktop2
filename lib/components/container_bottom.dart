@@ -28,7 +28,7 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
-    double minHeight = screenHeight / 100.0 * 85.5;
+    double minHeight = screenHeight / 100.0 * 85.3;
 
     return Stack(
       children: [
@@ -56,6 +56,7 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
                         flex: 11,
                         child: Contractor(data: data),
                       ),
+                      SizedBox(width: 50),
                     ],
                   ),
                 ),
@@ -80,13 +81,11 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
           ),
         ),
         Positioned(
-          top: 20, // Позиционирование по вертикали
-          right: 20, // Позиционирование по горизонтали
+          right: 20, 
           child: Container(
             width: 200,
             height: 400,
             child: Delivery_calculation(),
-            // Добавьте сюда содержимое малого контейнера
           ),
         ),
       ],

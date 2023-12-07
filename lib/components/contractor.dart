@@ -81,15 +81,18 @@ class _Contractor extends State<Contractor> {
                   setState(() {
                     containers_inner_container.add(
                       Inner_container(
-                          selectedItem: selectedItem,
-                          count: count,
-                          dropdownItems: _dropdownItems,
-                          dropdownItems2: _dropdownItems2,
-                          transport: transport,
-                          transports: transports,
-                          containersManufacturer: containers_manufacturer,
-                          containersDeliveryLocation:
-                              containers_delivery_location),
+                        selectedItem: selectedItem,
+                        count: count,
+                        dropdownItems: _dropdownItems,
+                        dropdownItems2: _dropdownItems2,
+                        transport: transport,
+                        transports: transports,
+                        containersManufacturer: [
+                          Manufacturer_panel(),
+                        ],
+                        containersDeliveryLocation:
+                            containers_delivery_location,
+                      ),
                     );
                   });
                 },

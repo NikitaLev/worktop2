@@ -24,20 +24,20 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
     'Тяжелогруз': false,
     'Жд вагоны': false
   };
-  List<Map<String, bool>> transports = [transport, transport];
+  List<Map<String, bool>> transports = [transport];
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Stack(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return Stack(
+      children: [
+        SingleChildScrollView(
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 padding: EdgeInsets.only(right: 200),
-                width: 1800,
-                height: 500,
+                //  width: 1800,
+                // height: null,
                 child: Row(
                   children: [
                     Expanded(
@@ -45,21 +45,18 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
                       child: IntrinsicWidth(
                         child: Transport(
                           transports: transports,
-                          transport: transport,
                         ),
                       ),
                     ),
                     Expanded(
                       flex: 11,
-                      child: IntrinsicWidth(
-                        child: Contractor(data: data),
-                      ),
+                      child: Contractor(data: data),
                     ),
                   ],
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 50, right: 0),
+                padding: EdgeInsets.only(right: 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,18 +73,18 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
               ),
             ],
           ),
-          Positioned(
-            top: 20, // Позиционирование по вертикали
-            right: 20, // Позиционирование по горизонтали
-            child: Container(
-              width: 200,
-              height: 400,
-              child: Delivery_calculation(),
-              // Добавьте сюда содержимое малого контейнера
-            ),
+        ),
+        Positioned(
+          top: 20, // Позиционирование по вертикали
+          right: 20, // Позиционирование по горизонтали
+          child: Container(
+            width: 200,
+            height: 400,
+            child: Delivery_calculation(),
+            // Добавьте сюда содержимое малого контейнера
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

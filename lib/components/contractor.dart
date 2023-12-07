@@ -68,17 +68,15 @@ class _Contractor extends State<Contractor> {
     return Container(
       padding: EdgeInsets.all(20),
       child: IntrinsicWidth(
-        child: Column(
-          children: [
-            Container(
-              child: IntrinsicWidth(
+          child: Column(
+            // mainAxisSize: MainAxisSize.min,
+            children: [
+              IntrinsicWidth(
                 child: Column(children: [
                   ...containers_inner_container,
                 ]),
               ),
-            ),
-            Container(
-              child: InkWell(
+              InkWell(
                 onTap: () {
                   setState(() {
                     containers_inner_container.add(
@@ -113,10 +111,9 @@ class _Contractor extends State<Contractor> {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
     );
   }
 }
@@ -165,6 +162,7 @@ class _Inner_container extends State<Inner_container> {
       padding: EdgeInsets.only(top: 10),
       child: IntrinsicWidth(
         child: Container(
+          padding: EdgeInsets.only(bottom: 20,right: 10),
           decoration: BoxDecoration(
             color: Color.fromARGB(255, 230, 247, 255),
             borderRadius: BorderRadius.circular(4),

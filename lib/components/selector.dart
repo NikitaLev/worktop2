@@ -10,7 +10,8 @@ class Selector extends StatefulWidget {
   double width = 0;
 
   Selector(
-      {required dropdownItems,
+      {super.key,
+      required dropdownItems,
       required dropdownBackgroundColor,
       width = 150.0}) {
     this.dropdownItems = dropdownItems;

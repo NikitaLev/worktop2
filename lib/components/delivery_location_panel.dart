@@ -52,8 +52,11 @@ class _Delivery_location_panel extends State<Delivery_location_panel> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 5, left: 5, top: 20, bottom: 5),
-      color: Color.fromARGB(255, 178, 220, 255),
       padding: EdgeInsets.only(top: 10, bottom: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Color.fromARGB(255, 206, 232, 253),
+      ),
       child: SingleChildScrollView(
         child: Column(
           children: [

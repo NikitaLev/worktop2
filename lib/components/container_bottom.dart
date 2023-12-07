@@ -27,52 +27,56 @@ class _CustomBottomContainerState extends State<CustomBottomContainer> {
   List<Map<String, bool>> transports = [transport];
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double minHeight = screenHeight / 100.0 * 85.5;
+
     return Stack(
       children: [
         SingleChildScrollView(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.only(right: 200),
-                //  width: 1800,
-                // height: null,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: IntrinsicWidth(
+          child: Container(
+            constraints: BoxConstraints(minHeight: minHeight),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(right: 200),
+                  //  width: 1800,
+                  // height: null,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex: 2,
                         child: Transport(
                           transports: transports,
                         ),
                       ),
-                    ),
-                    Expanded(
-                      flex: 11,
-                      child: Contractor(data: data),
-                    ),
-                  ],
+                      Expanded(
+                        flex: 11,
+                        child: Contractor(data: data),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                padding: EdgeInsets.only(right: 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      child: Activity_panel(),
-                    ),
-                    Container(
-                      height: 100,
-                      child: Button_panel(),
-                    ),
-                  ],
+                Container(
+                  padding: EdgeInsets.only(right: 50),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Container(
+                        child: Activity_panel(),
+                      ),
+                      Container(
+                        height: 100,
+                        child: Button_panel(),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         Positioned(
